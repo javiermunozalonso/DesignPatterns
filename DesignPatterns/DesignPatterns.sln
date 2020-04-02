@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.Builder", "De
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern.Builder", "DesignPattern.Builder", "{4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.Builder.Test", "DesignPattern.Builder.Test\DesignPattern.Builder.Test.csproj", "{355D8405-B581-4572-BD51-081999BB301C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.Builder.Test", "DesignPattern.Builder.Test\DesignPattern.Builder.Test.csproj", "{355D8405-B581-4572-BD51-081999BB301C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6042B30C-9BED-43DE-B004-3C58C32E5F76}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
