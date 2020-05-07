@@ -2,21 +2,34 @@
 {
     using DesignPattern.Creational.Builder.Builders;
     using DesignPattern.Creational.Builder.Models.Ingredients;
+    using DesignPattern.Creational.Builder.Models.State;
     using System.Collections.Generic;
     using System.Linq;
 
     public class Pizza
     {
+        private readonly List<Ingredient> _ingredients;
+        private readonly Heat _heat;
+
         public Pizza(PizzaBuilder builder)
         {
             _ingredients = builder.GetIngredient();
+            _heat = builder.GetHeat();
         }
-
-        private List<Ingredient> _ingredients { get; set; } = new List<Ingredient>();
 
         public List<Ingredient> GetIngredients()
         {
             return _getIngredients();
+        }
+        
+        public Heat GetHeat()
+        {
+            return _heat;
+        }
+
+        public string GetHeatName()
+        {
+            return _heat.ToString();
         }
 
         public string GetIngredientsNames()

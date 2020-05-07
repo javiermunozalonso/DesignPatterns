@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>DesignPattern.Creational.Builder.Test</AssemblyName>
+
+    <RootNamespace>DesignPattern.Creational.Builder.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

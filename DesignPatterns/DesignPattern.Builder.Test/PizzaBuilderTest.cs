@@ -3,24 +3,43 @@ namespace DesignPattern.Builder.Test
     using DesignPattern.Creational.Builder.Builders;
     using DesignPattern.Creational.Builder.Models.Ingredients;
     using DesignPattern.Creational.Builder.Models.Pizzas;
+    using DesignPattern.Creational.Builder.Models.State;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class PizzaBuilderTest
     {
         [TestMethod]
-        public void given_a_pizzaBuilder_build_pizza_then_we_got_a_pizza()
+        public void given_a_pizzaBuilder_build_pizza_then_we_got_a_pizza_with_low_heat()
         {
+            Heat expectedHeat = Heat.Low;
+
             var builder = new PizzaBuilder();
             Pizza pizza = builder.Build();
+
             Assert.IsNotNull(pizza);
+            Assert.AreEqual(expectedHeat, pizza.GetHeat());
         }
 
         [TestMethod]
-        public void given_a_pizzaBuilder_add_7_ingredients_and_build_pizza_then_we_got_a_pizza_with_7_ingredients()
+        public void given_a_pizzaBuilder_build_pizza_with_high_heat_then_we_got_a_pizza_with_high_heat()
         {
-            const int ingredientsExpected = 7;
-            const bool hasIngredientsExpected = true;
+            Heat expectedHeat = Heat.High;
+
+            var builder = new PizzaBuilder();
+            builder.AddHeat(Heat.High);
+            Pizza pizza = builder.Build();
+
+            Assert.IsNotNull(pizza);
+            Assert.AreEqual(expectedHeat, pizza.GetHeat());
+        }
+
+        [TestMethod]
+        public void given_a_pizzaBuilder_add_7_ingredients_and_build_pizza_then_we_got_a_pizza_with_7_ingredients_and_low_heat()
+        {
+            Heat expectedHeat = Heat.Low;
+            const int expectedIngredientsCount = 7;
+            const bool expectedHasIngredients = true;
 
             var builder = new PizzaBuilder();
             builder.AddIngredient(new Mozzarella());
@@ -34,16 +53,17 @@ namespace DesignPattern.Builder.Test
             Pizza pizza = builder.Build();
 
             Assert.IsNotNull(pizza);
-            Assert.AreEqual(ingredientsExpected, pizza.GetIngredients().Count);
-            Assert.AreEqual(hasIngredientsExpected, pizza.HasIngredients());
+            Assert.AreEqual(expectedIngredientsCount, pizza.GetIngredients().Count);
+            Assert.AreEqual(expectedHasIngredients, pizza.HasIngredients());
+            Assert.AreEqual(expectedHeat, pizza.GetHeat());
         }
 
         [TestMethod]
         public void given_a_pizzaBuilder_add_3_ingredients_and_build_pizza_then_we_got_a_pizza_with_3_ingredients_and_its_names()
         {
-            const int ingredientsExpected = 3;
-            const string ingredientsNamesExpected = "Mozzarella, Oregano, Peperoni";
-            const bool hasIngredientsExpected = true;
+            const int expectedIngredientsCount = 3;
+            const string expectedIngredientsNames = "Mozzarella, Oregano, Peperoni";
+            const bool expectedHasIngredients = true;
 
             var builder = new PizzaBuilder();
             builder.AddIngredient(new Mozzarella());
@@ -53,26 +73,26 @@ namespace DesignPattern.Builder.Test
             Pizza pizza = builder.Build();
 
             Assert.IsNotNull(pizza);
-            Assert.AreEqual(ingredientsExpected, pizza.GetIngredients().Count);
-            Assert.AreEqual(ingredientsNamesExpected, pizza.GetIngredientsNames());
-            Assert.AreEqual(hasIngredientsExpected, pizza.HasIngredients());
-        }        
+            Assert.AreEqual(expectedIngredientsCount, pizza.GetIngredients().Count);
+            Assert.AreEqual(expectedIngredientsNames, pizza.GetIngredientsNames());
+            Assert.AreEqual(expectedHasIngredients, pizza.HasIngredients());
+        }
 
         [TestMethod]
         public void given_a_pizzaBuilder_build_pizza_then_we_got_a_pizza_with_0_ingredients()
         {
-            const int ingredientsExpected = 0;
-            string ingredientsNamesExpected = string.Empty;
-            const bool hasIngredientsExpected = false;
+            const int expectedIngredientsCount = 0;
+            string expectedIngredientsNames = string.Empty;
+            const bool expectedHasIngredients = false;
 
             var builder = new PizzaBuilder();
 
             Pizza pizza = builder.Build();
 
             Assert.IsNotNull(pizza);
-            Assert.AreEqual(ingredientsExpected, pizza.GetIngredients().Count);
-            Assert.AreEqual(ingredientsNamesExpected, pizza.GetIngredientsNames());
-            Assert.AreEqual(hasIngredientsExpected, pizza.HasIngredients());
+            Assert.AreEqual(expectedIngredientsCount, pizza.GetIngredients().Count);
+            Assert.AreEqual(expectedIngredientsNames, pizza.GetIngredientsNames());
+            Assert.AreEqual(expectedHasIngredients, pizza.HasIngredients());
         }
     }
 }
