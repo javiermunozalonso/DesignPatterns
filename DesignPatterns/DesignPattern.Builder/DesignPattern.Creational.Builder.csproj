@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>DesignPattern.Creational.Builder</AssemblyName>
+    <RootNamespace>DesignPattern.Creational.Builder</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

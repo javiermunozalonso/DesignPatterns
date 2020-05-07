@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.Builder", "DesignPattern.Builder\DesignPattern.Builder.csproj", "{207B93FF-7D88-42B0-8C08-09CE2B234EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.Creational.Builder", "DesignPattern.Builder\DesignPattern.Creational.Builder.csproj", "{207B93FF-7D88-42B0-8C08-09CE2B234EC9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern.Builder", "DesignPattern.Builder", "{4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern.Creational", "DesignPattern.Creational", "{4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPattern.Builder.Test", "DesignPattern.Builder.Test\DesignPattern.Builder.Test.csproj", "{355D8405-B581-4572-BD51-081999BB301C}"
 EndProject
@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern", "DesignPattern", "{24B83F29-55C8-4519-BBBC-08CCFB68F251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder", "Builder", "{8AC86D63-E604-4457-BD5E-C27DD4FC3046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +37,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{207B93FF-7D88-42B0-8C08-09CE2B234EC9} = {4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}
-		{355D8405-B581-4572-BD51-081999BB301C} = {4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}
+		{207B93FF-7D88-42B0-8C08-09CE2B234EC9} = {8AC86D63-E604-4457-BD5E-C27DD4FC3046}
+		{355D8405-B581-4572-BD51-081999BB301C} = {8AC86D63-E604-4457-BD5E-C27DD4FC3046}
+		{8AC86D63-E604-4457-BD5E-C27DD4FC3046} = {4494B0EA-61B0-4521-8FC9-AB4066A2DDBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2D9AE9C-CB89-4B54-85B1-93A06FC792EE}

@@ -1,20 +1,20 @@
-﻿namespace DesignPattern.Builder
+﻿namespace DesignPattern.Creational.Builder.Models.Pizzas
 {
-    using DesignPattern.Builder.Ingredients;
-    using System;
+    using DesignPattern.Creational.Builder.Builders;
+    using DesignPattern.Creational.Builder.Models.Ingredients;
     using System.Collections.Generic;
     using System.Linq;
 
     public class Pizza
     {
-        public Pizza(ICollection<Ingredient> ingredients)
+        public Pizza(PizzaBuilder builder)
         {
-            _ingredients = ingredients ?? throw new ArgumentNullException(nameof(ingredients));
+            _ingredients = builder.GetIngredient();
         }
 
-        private ICollection<Ingredient> _ingredients { get; set; }
+        private List<Ingredient> _ingredients { get; set; } = new List<Ingredient>();
 
-        public ICollection<Ingredient> GetIngredients()
+        public List<Ingredient> GetIngredients()
         {
             return _getIngredients();
         }
@@ -32,7 +32,7 @@
             return _ingredients.Count != 0;
         }
 
-        private ICollection<Ingredient> _getIngredients()
+        private List<Ingredient> _getIngredients()
         {
             if (HasIngredients())
             {

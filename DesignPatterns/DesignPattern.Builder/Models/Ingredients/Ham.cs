@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.Builder.Ingredients
+﻿namespace DesignPattern.Creational.Builder.Models.Ingredients
 {
     public class Ham : Ingredient
     {
